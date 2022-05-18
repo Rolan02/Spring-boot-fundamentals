@@ -5,6 +5,7 @@ import com.fundamentos.spring.fundamentos.bean.MyBeanWIthDependency;
 import com.fundamentos.spring.fundamentos.bean.MyBeanWIthProperties;
 import com.fundamentos.spring.fundamentos.bean.Mybean;
 import com.fundamentos.spring.fundamentos.component.ComponentDependency;
+import com.fundamentos.spring.fundamentos.pojo.UserPojo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
@@ -19,12 +20,14 @@ public class FundamentosApplication implements CommandLineRunner {
 	private MyBeanWIthDependency myBeanWIthDependency;
 
 	private MyBeanWIthProperties myBeanWIthProperties;
+	private UserPojo userPojo;
 
-	public FundamentosApplication(@Qualifier("componentTwoImplement") ComponentDependency componentDependency, Mybean myBean, MyBeanWIthDependency myBeanWIthDependency, MyBeanWIthProperties myBeanWIthProperties){
+	public FundamentosApplication(@Qualifier("componentTwoImplement") ComponentDependency componentDependency, Mybean myBean, MyBeanWIthDependency myBeanWIthDependency, MyBeanWIthProperties myBeanWIthProperties, UserPojo userPojo){
 		this.componentDependency = componentDependency;
 		this.myBean = myBean;
 		this.myBeanWIthDependency = myBeanWIthDependency;
 		this.myBeanWIthProperties = myBeanWIthProperties;
+		this.userPojo = userPojo;
 	}
 
 
@@ -38,5 +41,6 @@ public class FundamentosApplication implements CommandLineRunner {
 		myBean.print();
 		myBeanWIthDependency.printWithDependency();
 		System.out.println(myBeanWIthProperties.function());
+		System.out.println(userPojo.getEmail() + "-" + userPojo.getPassword());
 	}
 }
