@@ -3,7 +3,6 @@ package com.fundamentos.spring.fundamentos.configuration;
 import com.fundamentos.spring.fundamentos.bean.MyBeanWIthProperties;
 import com.fundamentos.spring.fundamentos.bean.MyBeanWIthPropertiesImplement;
 import com.fundamentos.spring.fundamentos.pojo.UserPojo;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -33,8 +32,8 @@ public class GeneralConfiguration {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("org.h2.Driver");
         dataSourceBuilder.url("jdbc:h2:mem:test");
-        dataSourceBuilder.username("SA");
-        dataSourceBuilder.password("");
+        dataSourceBuilder.username("root");
+        dataSourceBuilder.password("Root1234!");
         return dataSourceBuilder.build();
     }
 }
