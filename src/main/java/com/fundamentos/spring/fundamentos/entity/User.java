@@ -1,12 +1,16 @@
 package com.fundamentos.spring.fundamentos.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "user")
 public class User {
@@ -33,47 +37,6 @@ public class User {
         this.email = email;
         this.birthDate = birthDate;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public List<Post> getPost() {
-        return post;
-    }
-
-    public void setPost(List<Post> post) {
-        this.post = post;
-    }
-
     @Override
     public String toString() {
         return "User{" +
